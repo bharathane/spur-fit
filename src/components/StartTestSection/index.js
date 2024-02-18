@@ -17,7 +17,7 @@ const StartTestSection = () => {
         {
           opacity: 0,
         },
-        { opacity: 1, duration: 1 }
+        { opacity: 1, duration: 2 }
       );
     };
 

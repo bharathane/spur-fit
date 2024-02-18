@@ -4,29 +4,18 @@ import "./index.css";
 
 const VacancyItem = (props) => {
   useEffect(() => {
-    const handleScroll = () => {
-      // Calculate the percentage scrolled
-      const scrollPercentage =
-        (window.scrollY /
-          (document.documentElement.scrollHeight - window.innerHeight)) *
-        100;
-
-      // Use GSAP to animate based on the scroll percentage
-      gsap.to(".vacancy-item-container", {
-        y: scrollPercentage >= 30 ? 0 : 150,
+    gsap.fromTo(
+      ".vacancy-item-container",
+      {
+        y: 10,
+      },
+      {
+        y: 100,
         duration: 2,
-        ease: "power2.out",
+        repeat: -1,
         yoyo: true,
-      });
-    };
-
-    // Attach the scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup: remove the event listener when the component is unmounted
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      }
+    );
   }, []);
 
   const { vacancyDetails } = props;

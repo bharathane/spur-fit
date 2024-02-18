@@ -18,6 +18,8 @@ const SkillRating = () => {
         stagger: {
           amount: 3,
         },
+        repeat: -1,
+        yoyo: true,
       });
 
       gsap.fromTo(
@@ -37,7 +39,7 @@ const SkillRating = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, []);
 
   return (
     <div className="rating-skills-container">
