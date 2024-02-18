@@ -16,7 +16,7 @@ const HomeBanner = () => {
       duration: 1.21,
       opacity: 1,
     });
-  });
+  }, []);
   return (
     <div className="home-banner">
       <div className="home-content-container">

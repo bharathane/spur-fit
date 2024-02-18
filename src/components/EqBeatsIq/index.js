@@ -54,8 +54,16 @@ const emotionsList = [
 
 const EqBeatsIq = () => {
   useEffect(() => {
-    console.log("does this sound");
-  });
+    gsap.fromTo(
+      ".does-this-sound-text",
+      {
+        opacity: 0,
+        fontSize: 10,
+        x: -100,
+      },
+      { opacity: 1, x: 1, fontSize: 40 }
+    );
+  }, []);
   return (
     <div className="EqBeats-container">
       <div className="eq-beats-iq-container">
@@ -73,7 +81,11 @@ const EqBeatsIq = () => {
         <h1 className="does-this-sound-text">Does this sound familiar...</h1>
         <ul className="all-emotions-list">
           {emotionsList.map((each) => (
-            <EmotionCard key={each.id} emotionDetails={each} />
+            <EmotionCard
+              key={each.id}
+              emotionDetails={each}
+              isHilighted={each.id === "DOUBT"}
+            />
           ))}
         </ul>
       </div>
