@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import EmotionCard from "../EmotionCard";
+import gsap from "gsap";
 
 import "./index.css";
 
@@ -50,28 +52,33 @@ const emotionsList = [
   },
 ];
 
-const EqBeatsIq = () => (
-  <div className="EqBeats-container">
-    <div className="eq-beats-iq-container">
-      <h3 className="eq-beats-iq-title">EQ beats IQ</h3>
-      <p className="eq-beats-iq-desciptions">
-        People with high emotional intelligence(EQ) live more fulfilled
-        lives.They tend to be happier and have more healthier relationships.
-      </p>
-      <p className="eq-beats-iq-desciptions">
-        People with high emotional intelligence(EQ) live more fulfilled
-        lives.They tend to be happier and have more healthier relationships.
-      </p>
+const EqBeatsIq = () => {
+  useEffect(() => {
+    console.log("does this sound");
+  });
+  return (
+    <div className="EqBeats-container">
+      <div className="eq-beats-iq-container">
+        <h3 className="eq-beats-iq-title">EQ beats IQ</h3>
+        <p className="eq-beats-iq-desciptions">
+          People with high emotional intelligence(EQ) live more fulfilled
+          lives.They tend to be happier and have more healthier relationships.
+        </p>
+        <p className="eq-beats-iq-desciptions">
+          People with high emotional intelligence(EQ) live more fulfilled
+          lives.They tend to be happier and have more healthier relationships.
+        </p>
+      </div>
+      <div className="emotions-container">
+        <h1 className="does-this-sound-text">Does this sound familiar...</h1>
+        <ul className="all-emotions-list">
+          {emotionsList.map((each) => (
+            <EmotionCard key={each.id} emotionDetails={each} />
+          ))}
+        </ul>
+      </div>
     </div>
-    <div className="emotions-container">
-      <h1 className="does-this-sound-text">Does this sound familiar...</h1>
-      <ul className="all-emotions-list">
-        {emotionsList.map((each) => (
-          <EmotionCard key={each.id} emotionDetails={each} />
-        ))}
-      </ul>
-    </div>
-  </div>
-);
+  );
+};
 
 export default EqBeatsIq;
