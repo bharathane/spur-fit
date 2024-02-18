@@ -1,0 +1,44 @@
+.meet-the-head-con {
+  background-color: #fdf4f0;
+  margin: 40px;
+  border-radius: 30px;
+  padding: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.meet-ahead-body {
+  display: flex;
+  width: 80%;
+}
+
+.meet-ahead-top-text {
+  font-size: 16px;
+  color: #000000;
+}
+
+.meet-ahead-title {
+  font-size: 40px;
+  color: #000000;
+  margin-top: 0px;
+}
+
+.meet-ahead-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meet-ahead-image {
+  width: 250px;
+  height: 250px;
+}
+
+.meet-ahead-content {
+  font-size: 18px;
+  color: #605e5e;
+  line-height: 30px;
+  width: 50%;
+}

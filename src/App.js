@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import HomeBanner from "./components/HomeBanner";
+import EqBeatsIq from "./components/EqBeatsIq";
+import WorkWithUs from "./components/WorkWithUs";
+import MeetTheHead from "./components/MeetTheHead";
+import SelfImprovement from "./components/SelfImprovement";
+import SkillRating from "./components/SkillRating";
+import Vacancies from "./components/Vacancies";
+import StartTestSection from "./components/StartTestSection";
+import Footer from "./components/Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import "./App.css";
+
+const App = () => (
+  <>
+    <Header />
+    <div className="app-body">
+      <HomeBanner />
+      <EqBeatsIq />
+      <MeetTheHead />
+      <SelfImprovement />
+      <SkillRating />
+      <StartTestSection />
+      <WorkWithUs />
+      <Vacancies />
+      <Footer />
     </div>
-  );
-}
+  </>
+);
 
 export default App;

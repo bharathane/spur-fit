@@ -1,0 +1,43 @@
+.EqBeats-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.eq-beats-iq-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 90px;
+}
+
+.eq-beats-iq-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.eq-beats-iq-desciptions {
+  width: 30%;
+  color: #000000;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.does-this-sound-text {
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 30px;
+  padding-left: 90px;
+  padding-right: 590px;
+}
+
+.all-emotions-list {
+  list-style-type: none;
+  padding-left: 0px;
+  display: flex;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
