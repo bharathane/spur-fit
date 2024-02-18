@@ -4,10 +4,30 @@ import "./index.css";
 
 const EmotionCard = (props) => {
   useEffect(() => {
-    gsap.to(".emotion-container", {
-      x: -400,
-      duration: 1,
-    });
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      // Calculate the direction of the scroll
+      const scrollDirection = window.scrollY > lastScrollY ? "down" : "up";
+
+      // Use GSAP to animate based on the scroll direction
+      gsap.to(".emotion-container", {
+        x: scrollDirection === "down" ? 0 : 400,
+        duration: 3,
+        ease: "power2.out",
+      });
+
+      // Update the last scroll position
+      lastScrollY = window.scrollY;
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup: remove the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const { emotionDetails, isHilighted } = props;

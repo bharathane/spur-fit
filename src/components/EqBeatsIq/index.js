@@ -54,15 +54,28 @@ const emotionsList = [
 
 const EqBeatsIq = () => {
   useEffect(() => {
-    gsap.fromTo(
-      ".does-this-sound-text",
-      {
-        opacity: 0,
-        fontSize: 10,
-        x: -100,
-      },
-      { opacity: 1, x: 1, fontSize: 40 }
-    );
+    const handleScroll = () => {
+      // Calculate the percentage scrolled
+      const scrollPercentage =
+        (window.scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight)) *
+        100;
+
+      // Use GSAP to animate based on the scroll percentage
+      gsap.to(".does-this-sound-text", {
+        x: scrollPercentage >= 30 ? 0 : 50,
+        duration: 2,
+        ease: "power2.out",
+      });
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup: remove the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   return (
     <div className="EqBeats-container">
